@@ -22,20 +22,23 @@
           <table class="table">
             <thead>
               <tr>
+                <th scope="col">#</th>
                 <th scope="col">Task</th>
                 <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
-    
-              @foreach ($tasks as $task)
+             
+              @for ($i=0;$i<count($tasks);$i++)
                 <tr>
-                  <td>{{$task->task}}</td>
-                  <td>
-                  <a href="delete/{{$task->id}}"><button class="btn btn-danger">DELETE</button></a>
-                  </td>
+                    <td>{{$i+1}}</td>
+                    <td>{{$tasks[$i]->task}}</td>
+                    <td>
+                      <a href="delete/{{$tasks[$i]->id}}"><button class="btn btn-danger">DELETE</button></a>
+                    </td>
                 </tr>
-              @endforeach
+              @endfor
+              
             </tbody>
           </table>
         

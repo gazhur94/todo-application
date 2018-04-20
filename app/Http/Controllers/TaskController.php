@@ -10,7 +10,7 @@ class TaskController extends Controller
     public function index()
     {
         $tasks = Task::all();
-
+        //dd($tasks[1]->task);
         return view('index')->with(['tasks' => $tasks]);
     }
 
